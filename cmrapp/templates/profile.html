@@ -1,0 +1,51 @@
+{% extends 'dashboard.html' %}
+{% block page %}
+
+<div class="padding-container">
+    <p class="profile-head">Account Settings</p>
+    <div class="profile-container">
+        <div class="profile-sidebar">
+            <div class="image-user">
+                <img id="user-logo" src="../static/lucky.JPG" alt='#'>
+            </div>
+            
+            <p id="username-text">Username</p>
+            <p id="prof-text">Profession</p>
+        </div>
+        <div class="profile-form">
+            <p class="title-heading">Information</p>
+            <div class="bottom-border"></div>
+            <div class="info-section sec">
+                <div class="info1">
+                    <p class=input-label>Email</p>
+                <p class="muted-text">lucky52.bhaman@gmail.com</p>
+                </div>
+                <div class="info2">
+                    <p class="input-label">Section</p>
+                <p class="muted-text">3yr-B</p>
+                </div>
+                
+            </div>
+            <p class="title-heading heading-2">Change Password</p>
+            <div class="bottom-border"></div>
+            <div class="password-section sec">
+                <form action="">
+                    <label for="pswd">Password</label>
+                    <input type="password" id="pswd">
+                    <label for="c-pswd">Confirm Password</label>
+                    <input type="password" id="c-pswd">
+                    <input type="submit" value="Change Password">
+                </form>
+            </div>
+            <p class="title-heading danger">Delete Account</p>
+            <div class="bottom-border"></div>
+            <div class="delete-section sec">
+                <section>Hi <b>Username</b>, this is to inform you about the account 
+                    deletion, once you remove the account you may lose all your data. 
+                </section>
+                <button class="delete-btn hvr-shutter-in-horizontal">Delete your account</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

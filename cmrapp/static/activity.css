@@ -1,0 +1,37 @@
+:root{
+    --main:#202124;
+    --f-font: "Google Sans","Roboto",Arial,Helvetica,sans-serif;
+    /* --danger:#f85149; */
+}
+
+.activity-container{
+    padding: 0 48px;
+    font-family:var(--f-font);
+
+}
+
+.activity-heading {
+    font-size:36px;
+    color:var(--main);
+    /* color:red; */
+}   
+
+
+.activity-table{
+    width:100%;
+    border-collapse: collapse;
+
+}
+
+.activity-table thead th{
+    border-bottom:2px solid #dee2e6;
+    font-weight:500;
+}
+
+.activity-table th{
+    border-bottom:1px solid #f8f9fa;
+}
+
+td{
+    text-align: center;
+}

@@ -1,0 +1,27 @@
+{% extends 'dashboard.html' %}
+{% block page %}
+<div class="activity-container">
+    <p class="activity-heading">We monitor your activity</p>
+    <table class="activity-table">
+        <thead>
+            <tr>
+                <th scope="col">SNo.</th>
+                <th>Name</th>
+                <th>Event Name</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in details%}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{i.name}}</td>
+                <td>{{i.event}}</td>
+                <td>{{i.date}}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

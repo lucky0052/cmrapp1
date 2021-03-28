@@ -1,0 +1,46 @@
+{% extends 'dashboard.html' %}
+{% block visualdata %}
+<script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Total Events',     10],
+        ['You Organized',  2],
+        ['Other Organized',  5]
+      ]);
+
+      var options = {
+        title: 'Event Organized Data',
+        pieHole: 0.4,
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+      chart.draw(data, options);
+    }
+  </script>
+{% endblock %}
+{% block page %}
+<div class="organize-container">
+    <p class="org-title">Organize Event</p>
+    <div class="organize-form">
+        <div class="org-item1">
+            <form action="">
+                <p>Event Name</p>
+                <input class="data" type="text" id="event-text">
+                <p>Date</p>
+                <input class="data" type="datetime" id="datetime-text">
+                <p>Location</p>
+                <input class="data" type="text" id="loc-text">
+                <p>Instructions</p>
+                <textarea name="ins" id="" cols="30" rows="6"></textarea> 
+                <input id="btn1" type="submit" value="Organize">
+            </form>
+        </div>
+        <div class="org-item2">
+            <div id="donutchart" style="width: 100%; height: 500px;"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{url_for('static',filename='cmr1.jpg')}}" size="32px">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Google fonts  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,500,700 &display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700|Google+Sans:400,500|Product+Sans:400&lang=en" rel="stylesheet">
+    <!-- index CSS -->
+    <link href="{{url_for('static',filename='index.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='wincard.css')}}" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
+    <!-- Hint CSS -->
+    <link href="{{url_for('static',filename='hint.css')}}" rel="stylesheet">
+    <title>Cmr University </title>
+  </head>
+  <body>
+    <!-- <header class="alert alert-success alert-dismissible fade show" role="alert">
+      <div class="container">
+        This is a notification regarding event.
+        <button type="button" class="btn-close btn-sm" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </header> -->
+        
+          <!-- <header > -->
+            {% block page %}
+            <div class="nav-container">
+              <header class="menu-container header-content">
+                <div class="container">
+                  <h1>CMR University</h1>
+                </div>
+              </header>
+              <div class="form-container">
+                <p class="form-title">Login</p>
+                <p class="form-heading">Don't have an account?&nbsp;<a href="#">click here</a> </p>
+                <form action="">
+                  <label for="email">Email</label>
+                  <input class="input-class" type="email" name="fname" id="name" placeholder="@cmr.edu.in" required>
+                  <label for="pswd">Password</label>
+                  <input class="input-class" type="password" name="pswd" placeholder="*****" required>
+                  <input type="submit" value="Get in">
+                </form>
+              </div>
+          
+
+            </div>
+
+          <!-- </header> -->
+      
+
+    
+
+    <!-- count container --> 
+    <div class="count-container container">
+      <div class="count1">
+        <h3>61</h3>
+        <p>Student</p>
+      </div>
+      <div class="count2">
+        <h3>61</h3>
+        <p>Events</p>
+      </div>
+      <div class="count3">
+        <h3>61</h3>
+        <p>Organizers</p>
+      </div>
+      <div class="count4">
+        <h3>61</h3>
+        <p>Student</p>
+      </div>
+    </div>
+    
+    
+    <!-- Cards -->
+    <div class="container cards-lg"> <!-- large container-->
+      <p id="card-heading">Organizers</p> <!-- Cards Heading-->
+      <div class="cards-container"> <!-- flex container1 -->
+        <div class="item-1"> <!-- First item -->
+          <div class="content"> <!-- content section -->
+            <p>Why join IT Quiz?</p>
+            <section>This is a platform where you 
+              can participate in an event. 
+             without hassle, and learn the things about IT
+             with Quiz, Games and many more.
+             There is an opportunity to conduct the Quizes
+             event. 
+            </section>
+          </div>
+        </div>
+        <div class="cards-container2"> <!-- Second item -->
+          <div class="item-2">
+            <p>Wiztech </p>
+            <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Alias doloribus vero et animi veniam, blanditiis autem impedit dolorum? </article>
+          </div>
+          <div class="item-3">
+            <p>IT Czars </p>
+            <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Alias doloribus vero et animi veniam, blanditiis autem impedit dolorum? </article>
+          </div>
+          <div class="item-4">
+            <p>Tech Forum</p>
+            <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Alias doloribus vero et animi veniam, blanditiis autem impedit dolorum? </article>
+          </div>
+        </div>
+      </div>
+    </div>  
+
+    <!-- Phrase container -->
+    <div class="container section-lg">
+      <p class="main-title">Aim</p>
+      <div class="section-container">
+        <div class="phrase-section">
+            <p class="section-heading">Easy to make You Difficult.</p>
+        </div>
+        <div class="image-section">
+            <img src="{{url_for('static',filename='strong.png')}}" alt="itimg" class="code-image">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Winner Cards-->
+    <!-- 
+    
+    <div class="mcards-container container">
+      {% for i in details %}
+      <div class="mcards">
+        <img src="{{url_for('static',filename='lucky.jpg')}}" alt="member" id="mem-pic">
+        <p id="user-name">{{i.name}} {{i.section}} </p>
+        <span class="hint--bottom-right hint--medium" aria-label="{{i.event1}} &nbsp;&nbsp;&nbsp;&nbsp;{{i.Date1}}"><img src="{{url_for('static',filename='info.svg')}}" ></span>
+      </div>
+      {% endfor %}
+      
+      
+    </div> -->
+    <p class="mcard-heading container">Winners</p>
+    <div class="wincard-container">
+      <div class="card-win ">
+        <input type="radio" name="select" id="slide_1" checked>
+        <input type="radio" name="select" id="slide_2">
+        <input type="radio" name="select" id="slide_3">
+        <input type="checkbox" id="slideImg">
+      
+        <div class="slider">
+          <label for="slide_1" class="slide slide_1"></label>
+          <label for="slide_2" class="slide slide_2"></label>
+          <label for="slide_3" class="slide slide_3"></label>
+        </div>
+      
+        <div class="inner_part">
+          <label for="slideImg" class="img">
+            <img class="img_1" src="../static/lucky.JPG">
+          </label>
+          <div class="content-win content_1">
+            <div class="title-win">Lucky</div>
+            <div class="text-win">
+              the greatest cities in the world.
+            </div>
+            <!-- <button>Read More</button> -->
+          </div>
+        </div>
+      
+        <div class="inner_part">
+          <label for="slideImg" class="img">
+            <img class="img_2" src="https://c4.wallpaperflare.com/wallpaper/649/96/56/ankara-cityscape-night-night-sky-wallpaper-preview.jpg">
+          </label>
+          <div class="content-win content_2">
+            <div class="title-win">Ankara</div>
+            <div class="text-win">
+              Grand National Assembly of Turkey.
+            </div>
+            <!-- <button>Read More</button> -->
+          </div>
+        </div>
+      
+        <div class="inner_part">
+          <label for="slideImg" class="img">
+            <img class="img_3" src="https://c4.wallpaperflare.com/wallpaper/620/34/558/turkey-izmir-mountains-wallpaper-preview.jpg">
+          </label>
+          <div class="content-win content_3">
+            <div class="title-win">İzmir</div>
+            <div class="text-win">third-largest city in Turkey.
+            </div>
+            <!-- <button>Read More</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- Footer -->
+
+
+    <div class="container footer-container">
+      <div class="container grid-container">
+        <div class="footer-item1">
+          <h1 class="footer-heads fh1">CMR University</h1>
+          <h5 id="footer-subhead">Made by The Unknown Medicore</h5>
+          <div class="help-link">
+            <a href="#" alt="privacy">Privacy</a>
+            <a href="#" alt="Faq">FAQ</a>
+          </div>
+        </div>
+        <div class="footer-item2">
+          <h1 class="footer-heads">Have any query?</h1>
+          <form action="">
+            <label for="pname">Name</label>
+            <input  type="text" name="Name" id="pname">
+            <label id="query-label" for="query">Enter your Query</label>
+            <textarea  name="query" id="query" cols="40" rows="5"></textarea>
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+        <div class="media">
+          <h1 class="footer-heads">Follow Us</h1>
+          <div class="links">
+            <img src="{{url_for('static',filename='google.png')}}" alt="google">
+            <img src="{{url_for('static',filename='github.png')}}" alt="github">
+            <img src="{{url_for('static',filename='fb.png')}}" alt="fb">
+          </div>
+        </div>
+      </div>
+    </div> 
+    {% endblock %}
+
+    <script src="../static/template1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <!-- <script src="{{url_for('static',filename='template1.js')}}"></script> -->
+    <!-- live icon -->
+    <!-- <script src="https://unpkg.com/feather-icons"></script> -->
+
+
+  </body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>IT | Dashboard</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{url_for('static',filename='dashboard.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='profile.css')}}">
+        <!-- <link rel="stylesheet" href="{{url_for('static',filename='hover-min.css')}}" media="all"> -->
+        <link rel="stylesheet" href="{{url_for('static',filename='organize.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='activity.css')}}">  
+        <link rel="icon" href="{{url_for('static',filename='cmr1.jpg')}}" size="32px">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">   
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700|Google+Sans:400,500|Product+Sans:400&lang=en" rel="stylesheet">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        {% block visualdata %}
+        <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Total Events',     10],
+          ['Missed Events',  2],
+          ['Attended Events',      5],
+          ['Winning', 2]
+        ]);
+
+        var options = {
+          title: 'Your Report',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+    {% endblock %}
+    </head>
+    <body>
+        <header>
+            <div class="navbar-container">
+                <div class="item1">
+                    <p class="navbar-brand">CMR University</p>
+                </div>
+                <div class="item2 "> 
+                    <img src="../static/lucky.JPG" alt="#">
+                </div>
+                <div class="item3 dropdown2">
+                    <button class="dropbtn2" onclick="myFunction()">Dashboard</button>
+                    <i class="fa fa-caret-down"></i>
+                
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="#">Profile</a>
+                    <a href="#">Bio</a>
+                    <hr>
+                    <a href="#">Sign out</a>
+                </div>
+                </div>
+
+                
+            </div>
+        </header>
+        {% block page %}
+        <div class="wel-banner">
+            <p class="banner-title">Hi, Username</p>
+        </div>
+        <div class="event-heading pd-48">
+            <p>Attended Events</p>
+            <div class="bottom-line"></div>
+        </div>
+        <div class="event-info ">
+            <div class="attend-info">
+                <div id="donutchart"></div>
+                <!-- <img src="#" alt="check"> -->
+            </div>
+            <div class="join-card">
+                <div class="notify-button">New</div>
+                <img src="../static/boyedu.jpg" alt="event-img">
+                <div class="event-info1">
+                    <p>Microsoft Hackathon</p>
+                    <p>Organised by </p><span> <img src="../static/lucky.JPG" alt="#"></span>
+                    <form action="">
+                        <input type="submit" class="btn" value="Apply for Event">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="event-table pd-48">
+            <p class="table-title">Participated Student</p>
+            <div class="bottom-line"></div>
+            {% if details %}
+            <div class="button">
+                <div class="btn1"><button class="button-btn">Download </button></div>
+                        
+            </div>
+            <table >
+                <thead>
+                    <tr>
+                        <th scope='col'>#</th>
+                        <th>Name</th>
+                        <th>Session</th>
+                        <th>Event</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in details %}
+                <tr>
+                    <th scope='row'>1</th>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.section }}</td>
+                    <td>{{ i.event }}</td>
+                    <td>{{ i.date }}</td>
+                </tr>
+                {% endfor %}
+                {% else %}
+                <h1>No one has Participated yet.</h1>
+                </tbody>
+                
+                
+            </table>
+            {% endif %}
+        </div>        
+        {% endblock %}       
+        <script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn2')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+</script> 
+    </body>
+</html>
+
